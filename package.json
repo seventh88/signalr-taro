@@ -1,0 +1,59 @@
+{
+  "name": "signalr-taro",
+  "version": "0.0.2",
+  "description": "ASP.NET Core SignalR Client for taro",
+  "module": "./dist/index.js",
+  "typings": "./dist/types/index.d.ts",
+  "directories": {
+    "test": "spec"
+  },
+  "sideEffects": false,
+  "scripts": {
+    "preclean": "yarn install --mutex network --frozen-lockfile",
+    "clean": "node node_modules/rimraf/bin.js ./dist",
+    "prebuild": "yarn run clean && yarn install --mutex network --frozen-lockfile",
+    "build": "yarn run build:lint && yarn run build:esm",
+    "build:lint": "node node_modules/eslint/bin/eslint ./src --ext .ts",
+    "build:esm": "node node_modules/typescript/bin/tsc --project ./tsconfig.json --module es2015 --outDir ./dist -d && node ./build/process-dts.js",
+    "test": "echo \"Run 'yarn test' in the 'clients/ts' folder to test this package\" && exit 1"
+  },
+  "keywords": [
+    "signalr",
+    "taro",
+    "aspnetcore"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/seventh88/signalr-taro.git"
+  },
+  "author": "Microsoft",
+  "license": "MIT",
+  "files": [
+    "dist/**/*"
+  ],
+  "devDependencies": {
+    "@types/eventsource": "^1.1.5",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^14.14.31",
+    "@types/tough-cookie": "^4.0.0",
+    "@types/webpack": "^4.4.0",
+    "@typescript-eslint/eslint-plugin": "^5.20.0",
+    "@typescript-eslint/parser": "^5.20.0",
+    "eslint": "^8.13.0",
+    "eslint-plugin-jsdoc": "^39.2.5",
+    "jest": "^24.1.0",
+    "jest-junit": "^6.4.0",
+    "process": "^0.11.10",
+    "rimraf": "^2.6.2",
+    "ts-jest": "^24.0.2",
+    "ts-loader": "^4.4.1",
+    "tslint": "^5.9.1",
+    "typescript": "^3.6.2",
+    "uglify-js": "^3.3.5",
+    "webpack": "^4.12.0",
+    "webpack-cli": "^3.0.3"
+  },
+  "dependencies": {
+    "@tarojs/taro": ">=3.4.3"
+  }
+}

@@ -1,0 +1,25 @@
+{
+    "compileOnSave": false,
+    "include": [
+        "./src/**/*"
+    ],
+    "compilerOptions": {
+        "module": "es2015",
+        "target": "es2019",
+        "sourceMap": false,
+        "moduleResolution": "node",
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "noUnusedLocals": true,
+        "noUnusedParameters": true,
+        "suppressImplicitAnyIndexErrors": false,
+        "noEmitOnError": true,
+        "skipLibCheck": true,
+        "stripInternal": true,
+        "strict": true,
+        "declarationDir": "./dist/types",
+        "lib": [ "es2019" ],
+    }
+}
